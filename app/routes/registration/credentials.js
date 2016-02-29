@@ -1,9 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+    model: function () {
+        return {};
+    },
     actions: {
         sendCredentials(model){
-            $.ajax({
+           /* $.ajax({
                 url: 'http://localhost:8080/registration/credentials',
                 type: 'post',
                 headers: {
@@ -14,7 +17,8 @@ export default Ember.Route.extend({
                 success: function (data) {
                     console.info(data);
                 }
-            });
+            });*/
+            debugger;
         }
     }
 });

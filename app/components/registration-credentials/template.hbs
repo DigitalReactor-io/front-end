@@ -1,0 +1,24 @@
+<h3>Регистрация в сервисе</h3>
+
+<form id="newUser">
+    <p>
+        {{#if warning.userAlreadyExist}}
+            Пользователь {{user.name}} уже существует.
+        {{/if}}
+        {{#if warning.invalidLogin}}
+            Требуется ввести логин
+        {{/if}}
+        {{input value=user.name placeholder="Name"}}
+        {{#if warning.invalidPassword}}
+            Требуется ввести пароль
+        {{/if}}
+        {{input value=user.password placeholder="Password"}}
+    </p>
+    <p>
+         {{#if sending}}
+             <button disabled>Далее</button>
+         {{else}}
+             <button {{action "sendCredentials" user}}>Далее</button>
+        {{/if}}
+    </p>
+</form>
