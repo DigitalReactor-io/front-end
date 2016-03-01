@@ -1,11 +1,19 @@
 import Ember from 'ember';
 
+var isNameFree = function (name) {
+    //TODO должин быть внешним источником данных, а не захардкоженным путём
+    let result = $.getJSON('http://localhost:8080/user/' + name);
+
+    return true;
+};
+
 export default Ember.Route.extend({
     model: function () {
         return {};
     },
     actions: {
-        sendCredentials(model){
+        handlerUser(user){
+
            /* $.ajax({
                 url: 'http://localhost:8080/registration/credentials',
                 type: 'post',

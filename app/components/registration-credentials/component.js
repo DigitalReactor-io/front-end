@@ -1,48 +1,36 @@
 import Ember from 'ember';
 
 const MIN_PASSWORD_LENGTH = 5;
-const MIN_USER_NAME = 3;
-const USER_REGEXP_CONDITION = '[a-zA-Z0-9]+$';
+const USER_REGEXP_CONDITION = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 var isValidPassword = function (password) {
     return password !== undefined && password.length > MIN_PASSWORD_LENGTH;
 };
-var isValidName = function (name) {
-    let pattern = new RegExp(USER_REGEXP_CONDITION);
-    return pattern.test(name) && name.length > MIN_USER_NAME;
-};
-var isNameFree = function (name) {
-    //TODO должин быть внешним источником данных, а не захардкоженным путём
-    let result = $.getJSON('http://localhost:8080/user/'+name);
+var isValidEmail = function (email) {
+    return USER_REGEXP_CONDITION.test(email);
 };
 
 export default Ember.Component.extend({
     sending: false,
     warning: {
-        invalidLogin: false,
-        invalidPassword: false,
-        userAlreadyExist: false
+        invalidEmail: false,
+        invalidPassword: false
     },
     actions: {
-        sendCredentials(user) {
-            if (isValidName(user.name)) {
-                this.set('warning.invalidLogin', false);
+        validationAndHandle(user) {
+            if (isValidEmail(user.email)) {
+                this.set('warning.invalidEmail', false);
             } else {
-                this.set('warning.invalidLogin', this);
+                this.set('warning.invalidEmail', true);
             }
             if (isValidPassword(user.password)) {
                 this.set('warning.invalidPassword', false);
             } else {
                 this.set('warning.invalidPassword', true);
             }
-            if (isNameFree(user.name)) {
-                this.set('warning.userAlreadyExist', false);
-            } else {
-                this.set('warning.userAlreadyExist', this);
-            }
-
-            if (!this.invalidLogin && !this.invalidPassword && !this.userAlreadyExist) {
-                // this.set('sending', true);
+            if (!this.warning.invalidEmail && !this.warning.invalidPassword) {
+                this.set('sending', true);
+                this.sendAction('handlerUser', user)
             }
         }
     }
