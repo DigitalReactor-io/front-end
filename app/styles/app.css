@@ -1,0 +1,94 @@
+html, body, .ember-view, .b-main-page {
+    height: 100%;
+}
+
+h1 {
+    margin: 0;
+}
+
+.flex-container {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.b-main-page {
+    margin: 0;
+    background: url("/images/bg2_registrations.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 100%;
+    color: #ffffff;
+}
+
+.opacity-background {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(74, 90, 137, 0.38);
+    opacity: 1;
+
+}
+
+.b-main-page__nav {
+    width: 960px;
+    padding-top: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.b-sing-in a {
+    color: #ffffff;
+}
+
+.b-main-page__content {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.b-nav__logo {
+    display: inline-block;
+}
+
+.b-nav__sign-in {
+    display: inline-block;
+}
+
+.b-greeting h1 {
+    text-align: center;
+}
+
+.b-start-registration__button {
+    padding: 4px 8px;
+    border: #ffffff solid 2px;
+    background-color: rgba(15, 40, 52, 0.52);
+    border-radius: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.b-start-registration__button:hover {
+    border: rgba(216, 216, 216, 0.33) solid 2px;
+    background-color: rgba(9, 150, 10, 0.56);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.b-start-registration__button:active {
+    border: rgba(216, 216, 216, 0.33) solid 2px;
+    background-color: rgba(9, 59, 10, 0.6);
+}
+
+.b-main-page__footer {
+    padding-bottom: 10px;
+}
+
+.b-github-logo {
+    height: 32px;
+    width: 32px;
+    background: url("/images/GitHub-Mark-Light-32px.png");
+}

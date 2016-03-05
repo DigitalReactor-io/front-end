@@ -1,3 +1,34 @@
-<h1>DigitalReactor</h1>
-{{#link-to "registration.credentials"}}Click here to contact us.{{/link-to}}
-{{outlet}}
+<div class="b-main-page">
+    <div class="flex-container opacity-background">
+        <nav class="b-main-page__nav">
+            <div class="b-nav__logo">
+                <div class="b-logo">
+                    <h1>DigitalReactor</h1>
+                </div>
+            </div>
+            <div class="b-nav__sign-in">
+                <div class="b-sing-in">
+                    <a href="#">Войти</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="b-main-page__content">
+            <div class="b-greeting">
+                <h1>Получите аудит посещаемости вашего <br> сайта бесплатно</h1>
+            </div>
+            <div class="b-start-registration">
+                {{#link-to "registration.credentials" class="b-start-registration__button"}}Получить аудит{{/link-to}}
+            </div>
+        </div>
+
+        <div class="b-main-page__footer">
+            <div class="b-github">
+                <a href="https://github.com/digitalreactor-io">
+                    <div class="b-github-logo"></div>
+                </a>
+            </div>
+        </div>
+        {{outlet}}
+    </div>
+</div>
