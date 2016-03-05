@@ -92,3 +92,83 @@ h1 {
     width: 32px;
     background: url("/images/GitHub-Mark-Light-32px.png");
 }
+
+.b-registration-form__wizard {
+    width: 240px;
+}
+
+.b-registration-form__wizard input {
+    border: 1px solid rgba(51, 51, 51, 0.09);
+    border-radius: 7px;
+}
+
+.b-registration-form__wizard input:focus {
+    border-color: rgba(51, 51, 51, 0.62);
+    outline: none;
+}
+
+.b-registration-form__wizard button {
+    border-radius: 7px;
+    outline: none;
+    background-color: #ffffff;
+    border: 1px solid rgba(50, 119, 170, 0.84);
+    color: rgba(50, 119, 170, 0.84);
+}
+
+.b-registration-form__wizard button:hover {
+    background-color: rgba(50, 119, 170, 0.84);
+    color: #ffffff;
+}
+
+.b-registration-form__wizard .warning {
+    color: #ff451f;
+}
+
+.b-whitebox__registration {
+    width: 500px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    color: #333333;
+}
+
+.b-registration-form {
+    padding: 5px 3px;
+    display: flex;
+}
+
+.b-registration-form__delimiter {
+    background: #333333;
+    width: 1px;
+    height: 100px;
+}
+
+.b-registration-steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.b-registration-form__steps {
+    width: 240px;
+}
+
+.b-registration-steps__step {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.b-registration-steps__circle {
+    height: 30px;
+    width: 30px;
+    padding-top: 4px;
+    padding-left: 10px;
+    border-radius: 50%;
+    border: 1px solid #333333;
+}
+
+.b-registration-steps_selected .b-registration-steps__circle {
+    color: #ffffff;
+    background: #00b3ee;
+    border-color: #0093c9;
+}
