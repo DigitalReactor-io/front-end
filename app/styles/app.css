@@ -172,3 +172,9 @@ h1 {
     background: #00b3ee;
     border-color: #0093c9;
 }
+
+.b-registration-steps_success .b-registration-steps__circle {
+    color: #ffffff;
+    background: #83ee95;
+    border-color: #69bf78;
+}

@@ -13,20 +13,24 @@ export default Ember.Route.extend({
     },
     actions: {
         handlerUser(user){
-
-           /* $.ajax({
+            //TODO добавить проверку на существования пользователя
+            $.ajax({
                 url: 'http://localhost:8080/registration/credentials',
                 type: 'post',
                 headers: {
-                    name: 'tom',
-                    password: 'bob'
+                    email: user.email,
+                    password: user.password
                 },
                 dataType: 'json',
                 success: function (data) {
                     console.info(data);
+                },
+                xhrFields: {
+                    withCredentials: true
                 }
-            });*/
-            debugger;
+            });
+
+            this.transitionTo('registration.access');
         }
     }
 });

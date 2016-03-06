@@ -1,1 +1,61 @@
+<div class="b-main-page">
+    <div class="flex-container opacity-background">
+        <nav class="b-main-page__nav">
+            <div class="b-nav__logo">
+                <div class="b-logo">
+                    <h1>DigitalReactor</h1>
+                </div>
+            </div>
+            <div class="b-nav__sign-in">
+                <div class="b-sing-in">
+                    <a href="#">Войти</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="b-whitebox__registration">
+            <div class="b-registration-form">
+                <div class="b-registration-form__wizard">
+                    <h4>Предоставьте доступ к вашей Яндекс.Метрике</h4>
+                    <p>
+                        Для подготовке аудита нам нужно получить доступ к вашему счетчику.
+                        Данные не будут переданы третьим лицам.
+                    </p>
+                    <button {{action "getAccess"}}>Открыть доступ</button>
+                </div>
+
+                <div class="b-registration-form__delimiter">
+                </div>
+
+                <div class="b-registration-form__steps">
+                    <div class="b-registration-steps">
+                        <div class="b-registration-steps__step b-registration-steps_success">
+                            <div class="b-registration-steps__circle"><div class="glyphicon glyphicon-ok"></div></div>
+                            <div class="">Регистрация в сервисе</div>
+                        </div>
+                        <div class="glyphicon glyphicon-arrow-down"></div>
+                        <div class="b-registration-steps__step  b-registration-steps_selected">
+                            <div class="b-registration-steps__circle">2</div>
+                            <div class="">Предоставление доступа к Яндекс.Метрике</div>
+                        </div>
+                        <div class="glyphicon glyphicon-arrow-down"></div>
+                        <div class="b-registration-steps__step">
+                            <div class="b-registration-steps__circle">3</div>
+                            <div class="">Создание проекта</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-main-page__footer">
+            <div class="b-github">
+                <a href="https://github.com/digitalreactor-io">
+                    <div class="b-github-logo"></div>
+                </a>
+            </div>
+        </div>
+        {{outlet}}
+    </div>
+</div>
 {{outlet}}
